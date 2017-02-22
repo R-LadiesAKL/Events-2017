@@ -1,0 +1,6 @@
+
+1. shinyapp example: https://natydasilva.shinyapps.io/Shinyppforest/
+2. Slides: https://github.com/natydasilva/slides
+3. PPforest package:https://github.com/natydasilva/PPforest
+4. email: ndasilva@iastate.edu
+5. twitter : https://twitter.com/pacocuak
