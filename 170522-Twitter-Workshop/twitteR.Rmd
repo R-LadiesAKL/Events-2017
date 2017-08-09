@@ -3,10 +3,10 @@ title: "R-Ladies Melbourne - Twitter Workshop"
 author: "Anna Quaglieri & Saskia Freytag"
 date: "15th May 2017"
 output:
-  html_document:
+  github_document:
     toc: yes
     toc_depth: 3
-  github_document:
+  html_document:
     toc: yes
     toc_depth: 3
 linkcolor: magenta
@@ -18,7 +18,7 @@ urlcolor: magenta
 knitr::opts_chunk$set(fig.width=8, fig.height=6, echo=T, warning=FALSE, message=FALSE,prompt=T,tidy=T,tidy.opts=list(width.cutoff=50),include=TRUE,cache=TRUE)
 
 # To be changed according to where the repository is saved
-dir <- "~/Documents/varie/Rladies/twitter_workshop"
+dir <- "~/Melbourne-Twitter-Workshop"
 
 library(png)
 library(grid)
@@ -212,7 +212,10 @@ write.csv(combineTweets,file.path(dir,"Data","tweets_hastags_combined.csv"),row.
 With the help of [tidyr](https://cran.r-project.org/web/packages/tidyr/index.html) we can reorganise and manipulate the dataset. For example, we can plot the number of tweets per day.
 
 ```{r fig.cap="Total number of tweets per day"}
-toDF_rupol_daily <- combineTweets %>% tidyr::separate(created, into = c("Day","Time"), sep = " ") %>%
+combineTweets <- read.csv(file.path(dir,"Data","tweets_hastags_combined.csv"))
+colnames(combineTweets)
+
+toDF_rupol_daily <- combineTweets %>% tidyr::separate(created, into = c("Day","Time"), sep = " ", remove = FALSE) %>%
 			dplyr::group_by(Day) %>% 
 			dplyr::summarise(tweetsPerDay = length(text)) %>%
 			ggplot(aes(x = Day, y = tweetsPerDay)) + 
@@ -283,6 +286,10 @@ Now that we have combined the tweets and the user's information we can start wit
 First, let's load the data where we saved the queen names and their twitter screen name:
 
 ```{r }
+# Read in data.frame containing tweets and User's infos
+combine_data <- read.csv(file.path(dir,"Data","Users_infos_and_tweets.csv"), stringsAsFactors = FALSE)
+table(combine_data$location)
+
 queens <- read.csv(file.path(dir,"Data","queens_name.csv"))
 knitr::kable(queens)
 ```
@@ -290,9 +297,6 @@ knitr::kable(queens)
 We are going to do the search through the *grep* function and for every queen we need a unique vector of names. This is because a queen can be mentioned via her twitter name, her queen name or even her real name. For simplicity and to avoi overlap between queens we will perform the search using their drag queen names and their twitter names. 
 
 ```{r}
-# Read in data.frame containing tweets and User's infos
-combine_data <- read.csv(file.path(dir,"Data","Users_infos_and_tweets.csv"), stringsAsFactors = FALSE)
-
 # Separate queen name into their components
 queens <- queens %>% 
   tidyr::separate(Queen.Name, into = c("Queen1","Queen2","Queen3"), sep = " ", remove = FALSE)
@@ -307,7 +311,9 @@ queen_vector <- function(x){
 # List containing the vectors for every queen
 queens_vecs <- apply(queens, 1,queen_vector)
 queens_grepKey_prepare <- lapply(queens_vecs, function(x) paste0(x, collapse = "|"))
+```
 
+```{r}
 # Set the encoding of the tweets as latin to avoid issues with for example emoji
 Encoding(combine_data$text) <- "latin1"
 grep_queens <- lapply(queens_grepKey_prepare, function(x) grep(x,combine_data$text))
@@ -492,6 +498,10 @@ combine_sentiment$score_breakdown <- cut(combine_sentiment$score, breaks = c(-In
 ggplot(combine_sentiment, aes(x = queen_name, fill = score_breakdown)) + 
 geom_bar(stat = "count", position = "fill") + coord_flip()
 
+ggplot(combine_sentiment, aes(x = queen_name, fill = score_breakdown)) + 
+geom_bar(stat = "count", position = "stack") + coord_flip()
+
+
 ```
 
 
@@ -499,6 +509,33 @@ geom_bar(stat = "count", position = "fill") + coord_flip()
 # extract R code
 knitr::purl(file.path(dir,"twitteR.Rmd"), output = file.path(dir,"twitteR.R"), documentation = 2)
 ```
+
+# Now make your own analysis!
+
+At this point, the participants of the workshop were asked to create their own analysis (plot, table, plot and table, etc...) and a winner was nomintaed!
+
+## Participant competition winner! 
+
+Below is the pot produced by the Twitter Workshop winner!!
+
+Plot produced by *Hannah Johns*: Sentiment analysis of 2 weeks of Rupaul's dragrace tweets by Queen and by day
+
+```{r fig.width=20, fig.height=12}
+library(scales)
+ggplot(combine_sentiment,aes(x=Day,fill=score_breakdown))+
+  geom_bar(color="black",position="fill")+
+  facet_wrap(~queen_name,ncol=7)+
+  scale_y_continuous(labels = percent_format())+
+  theme_bw()+
+  scale_fill_brewer(palette = "RdYlGn") + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+  theme(legend.position = "bottom")
+
+
+```
+
+Something suspicious suddenly happened to the popular @atlsexyslim during the 5th May episodes! You might need to watch it or analyse the tweets to find out what! We had hints from the the expert that it might be realted to the Kardashian..... 
+
 
 
 

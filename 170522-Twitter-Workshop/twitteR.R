@@ -2,23 +2,26 @@
 #' title: "R-Ladies Melbourne - Twitter Workshop"
 #' author: "Anna Quaglieri & Saskia Freytag"
 #' date: "15th May 2017"
-#' output: 
+#' output:
 #'   github_document:
-#'     toc: true
+#'     toc: yes
 #'     toc_depth: 3
 #'   html_document:
-#'     toc: true
+#'     toc: yes
 #'     toc_depth: 3
-#' urlcolor: magenta
 #' linkcolor: magenta
+#' urlcolor: magenta
 #' ---
 #' 
 ## ----echo = FALSE, message=FALSE-----------------------------------------
 # Chunk options
-knitr::opts_chunk$set(fig.width=8, fig.height=6, echo=T, warning=FALSE, message=FALSE,prompt=T,tidy=T,tidy.opts=list(width.cutoff=50),include=TRUE,cache=FALSE)
+knitr::opts_chunk$set(fig.width=8, fig.height=6, echo=T, warning=FALSE, message=FALSE,prompt=T,tidy=T,tidy.opts=list(width.cutoff=50),include=TRUE,cache=TRUE)
 
 # To be changed according to where the repository is saved
 dir <- "~/Documents/varie/Rladies/twitter_workshop"
+
+library(png)
+library(grid)
 
 #' 
 #' \clearpage
@@ -29,22 +32,38 @@ dir <- "~/Documents/varie/Rladies/twitter_workshop"
 #' 
 #' ***
 #' 
-#' ![Figure 1](/Users/quaglieri.a/Documents/varie/Rladies/twitter_workshop/Figures/signup1.png) 
+## ----fig.cap = "Figure 1", echo = FALSE----------------------------------
+img <- readPNG(file.path(dir,"Figures/signup1.png"))
+grid.raster(img)
+
+#' 
 #' **Figure 1**
 #' 
 #' ***
 #' 
-#' ![Figure 2](/Users/quaglieri.a/Documents/varie/Rladies/twitter_workshop/Figures/signup2.png) 
+## ----fig.cap = "Figure 2", echo = FALSE----------------------------------
+img <- readPNG(file.path(dir,"Figures/signup2.png"))
+grid.raster(img)
+
+#' 
 #' **Figure 2**
 #' 
 #' ***
 #' 
-#' ![Figure 3](/Users/quaglieri.a/Documents/varie/Rladies/twitter_workshop/Figures/twitter_apps.png) 
+## ----fig.cap = "Figure 3", echo = FALSE----------------------------------
+img <- readPNG(file.path(dir,"Figures/twitter_apps.png"))
+grid.raster(img)
+
+#' 
 #' **Figure 3**
 #' 
 #' ***
 #' 
-#' ![Figure 4](/Users/quaglieri.a/Documents/varie/Rladies/twitter_workshop/Figures/APIs_tokens.png) 
+## ----fig.cap = "Figure 4", echo = FALSE----------------------------------
+img <- readPNG(file.path(dir,"Figures/APIs_tokens.png"))
+grid.raster(img)
+
+#' 
 #' **Figure 4**
 #' 
 #' ***
@@ -57,7 +76,11 @@ dir <- "~/Documents/varie/Rladies/twitter_workshop"
 #' 
 #' ***
 #' 
-#' ![Figure 5](/Users/quaglieri.a/Documents/varie/Rladies/twitter_workshop/Figures/queens.png) 
+## ----fig.cap = "Figure 5", echo = FALSE----------------------------------
+img <- readPNG(file.path(dir,"Figures/queens.png"))
+grid.raster(img)
+
+#' 
 #' **Figure 5**
 #' 
 #' ***
@@ -474,7 +497,7 @@ geom_bar(stat = "count", position = "fill") + coord_flip()
 #' 
 ## ----eval = FALSE--------------------------------------------------------
 ## # extract R code
-## knir::purl(file.path(dir,"twitteR.Rmd"), output = file.path(dir,"twitteR.R"), documentation = 2)
+## knitr::purl(file.path(dir,"twitteR.Rmd"), output = file.path(dir,"twitteR.R"), documentation = 2)
 
 #' 
 #' 
