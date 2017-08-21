@@ -1,0 +1,21 @@
+---
+title: "mixOmics: analyse and combine multiple high dimensional dataset"
+author: "R-Ladies Melburne"
+date: "22/08/2017"
+output:
+  github_document
+---
+
+## Setup for mixOmics workshop
+
+- Install mixOmics 6.2.0 from CRAN in your R session
+
+```{r setup, include=TRUE, echo = TRUE, prompt=TRUE, eval = FALSE}
+install.packages("mixOmics")
+library("mixOmics")
+```
+
+- Download tutorial material (includes Rmd, html report, R and RData folder) from the [mixOmics page](http://mixomics.org/presentations/)  
+
+
+Enjoy!
