@@ -15,7 +15,7 @@ install.packages("mixOmics")
 library("mixOmics")
 ```
 
-- Download tutorial material (includes Rmd, html report, R and RData folder) from the [mixOmics page](http://mixomics.org/presentations/)  
+- [Download tutorial material](http://mixomics.org/wp-content/uploads/2017/08/Tutorial-Rladies.zip) (includes Rmd, html report, R and RData folder) 
 
 
 Enjoy!
