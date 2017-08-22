@@ -17,5 +17,8 @@ library("mixOmics")
 
 - [Download tutorial material](http://mixomics.org/wp-content/uploads/2017/08/Tutorial-Rladies.zip) (includes Rmd, html report, R and RData folder) 
 
+- [Download slides of the event](http://mixomics.org/wp-content/uploads/2017/08/R-ladies_LeCao.pdf)
+
+- Visit the [mixOmics website](http://mixomics.org/)
 
 Enjoy!
