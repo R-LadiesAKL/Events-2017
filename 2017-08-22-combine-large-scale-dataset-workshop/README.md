@@ -21,8 +21,8 @@ Setup for mixOmics workshop
 
 Enjoy!
 
-Watch the recording of the event!
----------------------------------
+Download and watch the recording of the event!
+----------------------------------------------
 
 -   Introduction to mixOmics: [part1](https://drive.google.com/file/d/0Bxc_SWRSPZhyWGNwMnpUQTBjM1k/view?usp=sharing)
 -   Hands on mixOmics and tips to build R packages: [part2](https://drive.google.com/file/d/0Bxc_SWRSPZhyY1lTVURzT2pncGM/view?usp=sharing)
