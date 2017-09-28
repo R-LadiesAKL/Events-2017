@@ -1,0 +1,19 @@
+---
+title: "R-Ladies Melbourne - Introduction to R Workshop"
+author: "Roxane Legaie and Nikki Rubinstein"
+date: "23rd September 2017"
+output:
+  github_document:
+    toc: yes
+    toc_depth: 3
+  html_document:
+    toc: yes
+    toc_depth: 3
+linkcolor: magenta
+urlcolor: magenta
+---
+
+
+You can find all the information relative to our workshop (topics covered and material used) at https://resbaz.github.io/RLadies-Intro-R-workshop/. 
+
+
