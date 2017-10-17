@@ -1,5 +1,5 @@
 
-<img src="README_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-1-1.png" style="display: block; margin: auto auto auto 0;" />
+<img src="README_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 
 Events in 2016-2017
 ===================

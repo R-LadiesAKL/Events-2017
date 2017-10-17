@@ -3,7 +3,7 @@ output:
   github_document
 ---
 
-```{r echo=FALSE,message=FALSE,fig.width=3,fig.height=4,fig.align='left',cache=TRUE}
+```{r echo=FALSE,message=FALSE,fig.width=5,fig.height=5,fig.align='center',cache=TRUE}
 library(png)
 library(grid)
 img <- readPNG("~/Documents/varie/Rladies/logo.png")
