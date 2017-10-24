@@ -7,7 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 library(readr)
-ladies_fields <- read.csv("./All_ladies/ladies_fields.csv")
+ladies_fields <- read.csv("ladies_fields.csv")
 
 skills <- ladies_fields$fields
 skills <- gsub(","," ",skills)
