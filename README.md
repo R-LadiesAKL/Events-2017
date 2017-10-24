@@ -6,20 +6,48 @@ Events in 2016-2017
 
 -   [Launch Meetup](https://github.com/R-LadiesAU/Events-2017/tree/master/2016-10-18-Launch-Meetup)
 
+Speaker: *Di Cook*, Professor of Business Analytics in the Department of Econometrics and Business Statistics at Monash University.
+
 -   [R Notebooks and Interactive Graphics](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-02-20-LearnAboutRNotebooksAheatmapInteractiveGraphics)
+
+Speakers:
+
+1.  [Natalia Da Silva](http://ndasilva.public.iastate.edu/), PhD in Statistics from Iowa State University
+2.  [Jovana Maksimovic](https://www.mcri.edu.au/users/dr-jovana-maksimovic), Postdoctoral scientist in Bioinformatics at the Murdoch Children Research Institute.
 
 -   [Git and GitHub workshop](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-04-05-Git-Workshop)
 
+Speaker: [Soroor Zadeh](https://twitter.com/SoroorHediyeh?lang=en), Research Assistant in Bioinformatics at the Walter and Eliza Hall Institute.
+
 -   [Twitter Workshop](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-05-22-Twitter-Workshop)
+
+Speaker: [Anna Quaglieri](https://github.com/annaquaglieri16), PhD candidate in Bioinformatics at the Walter and Eliza Hall Institute.
+
+Helper: [Saskia Freitag](https://twitter.com/trashystats), Postdoctoral scientist in Bioinformatics at the Walter and Eliza Hall Institute.
 
 -   [Web Scraping & Sports Analytics](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-06-15-Web-Scraping)
 
+Speaker: [Stephanie Kovalchik](http://on-the-t.com/), Tennis Data Scientist at the Game Insight Group at Tennis Australia and researcher at the Institute of Sport Exercise and Active Living at Victoria University.
+
 -   [Build Neural Network with R](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-07-17-BuildNeuralNetwork)
+
+Speaker: [Kristen Hunter](https://statistics.fas.harvard.edu/people/kristen-hunter), PhD candidate in statistics at Harvard University.
 
 -   [mixOmics: Combine Large Scale Datasets](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-08-22-combine-large-scale-dataset-workshop)
 
+Speaker: [Kim-Anh Le Cao](https://findanexpert.unimelb.edu.au/display/person791255), Academic, Mathematics and Statistics at the University of Melbourne.
+
 -   [Introduction to R Workshop](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-09-23-Introduction_to_R_workshop)
+
+Speakers:
+
+1.  [Roxane Legaie](https://twitter.com/RoxaneLegaie), Lead Clinical Bioinformatician at Peter MacCallum Cancer Centre.
+2.  [Nikki Rubinstein](https://twitter.com/nikkirubinstein), PhD candidate at Melbourne University.
 
 -   [Random Forest, Climate Change and Food Production](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-10-25-ClimateChange_and_RandomForest)
 
+Speaker: [Elizabeth Vogel](https://twitter.com/evbln), PhD researcher at the Australian-German Climate & Energy College, University of Melbourne, focusing on climate extreme events and agriculture.
+
 -   [One Year of R-Ladies Melbourne](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-10-25_OneYearOfRLadiesMelbourne)
+
+Presented by [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart)
