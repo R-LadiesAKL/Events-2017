@@ -1,0 +1,14 @@
+"0","events <- data.frame(title = c(""Random Forest & Climate Change"",""Intro to R"",""mixOmics"",
+                               ""Neural Network"",""Sports Analytics"",""Twitter Workshop"",
+                               ""GitHub"",""Dashboards with R"",""Women's Day breakfast"",
+                               ""Hidden Figures screening"",""RNotebook & Interactive Graphics"",""Christmas Party"",
+                               ""Launch Meetup"",""Analytics Charity Christmas Gala""),
+                     date_event = c(""2017-10-25"",""2017-09-24"",""2017-08-22"",""2017-07-17"",
+                                    ""2017-06-15"",""2017-05-22"",""2017-05-04"",""2017-03-30"",
+                                    ""2017-03-08"",""2017-03-02"",""2016-12-07"",""2017-02-20"",""2016-10-18"",
+                                    ""2016-11-24""),
+                     yax <- c(576,555,540,506,468,441,406,375,360,343,326,229,209))
+"
+"2","Error in data.frame(title = c(""Random Forest & Climate Change"", ""Intro to R"",  : 
+  arguments imply differing number of rows: 14, 13
+"

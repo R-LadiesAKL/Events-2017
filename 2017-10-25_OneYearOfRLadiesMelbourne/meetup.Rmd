@@ -1,0 +1,126 @@
+---
+title: "meetups"
+author: "Anna Quaglieri"
+date: "22/10/2017"
+output: html_document
+---
+
+```{r setup, include=TRUE,cache=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+```
+
+# Mmbers list
+
+```{r cumulative_per_date_with_label,fig.width=15,fig.height=7,cache=TRUE}
+library(readr)
+library(tidyverse)
+library(ggrepel)
+members <- read_delim("R-Ladies-Melbourne_Member_List_on_10-22-17.txt",  "\t", escape_double = FALSE, trim_ws = TRUE)
+
+members <- members %>% separate(`Joined Group on`, into =c("Month","Day","Year"),remove=FALSE,sep="/")
+table(members$Year)
+members$Year <- ifelse(members$Year == "16","2016",
+                       ifelse(members$Year == "17","2017",members$Year))
+members$Month <- ifelse(members$Month == "01","1",members$Month)
+members$Month <- ifelse(members$Month == "02","2",members$Month)
+members$Month <- ifelse(members$Month == "03","3",members$Month)
+members$Month <- ifelse(members$Month == "04","4",members$Month)
+members$Month <- ifelse(members$Month == "05","5",members$Month)
+members$Month <- ifelse(members$Month == "06","6",members$Month)
+members$Month <- ifelse(members$Month == "07","7",members$Month)
+members$Month <- ifelse(members$Month == "08","8",members$Month)
+members$Month <- ifelse(members$Month == "09","9",members$Month)
+members$Month <- factor(members$Month,levels=c("1","2","3","4","5","6","7","8","9","10","11","12"))
+
+members$Date_joined <- paste(members$Year,members$Month,members$Day,sep="-")
+members$Date_joined <- as.Date(members$Date_joined, "%Y-%m-%d")
+members <- members[order(members$Date_joined,decreasing = FALSE),]
+
+members_joined <- members %>% group_by(Date_joined) %>% 
+  dplyr::summarise(New_members = length(Name))
+members_joined$cumulative <- cumsum(members_joined$New_members)
+
+# events dates
+
+events <- data.frame(title = c("Random Forest & Climate Change","Intro to R","mixOmics",
+                               "Neural Network","Sports Analytics","Twitter Workshop",
+                               "Git in RStudio","Dashboards with R","Women's Day breakfast",
+                               "Hidden Figures screening","RNotebook & Interactive Graphics","Christmas Party",
+                               "Launch Meetup","Analytics Charity Christmas Gala"),
+                     date_event = c("2017-10-25","2017-09-24","2017-08-22","2017-07-17",
+                                    "2017-06-15","2017-05-22","2017-05-04","2017-03-30",
+                                    "2017-03-08","2017-03-02","2017-02-20","2016-12-07","2016-10-18",
+                                    "2016-11-24"),
+                     yax <- c(576,555,540,506,468,441,406,375,360,343,326,229,209,183))
+events$date_event <- as.Date(events$date_event,"%Y-%m-%d")
+ggplot(members_joined,aes(x=Date_joined,y=cumulative)) + geom_line(linetype="dotted") + geom_point(colour="grey50")  +
+  geom_vline(xintercept = events$date_event,linetype="dotted",colour="#691d7f") + 
+    geom_label_repel(data=events,aes(x=date_event,y=yax,label=title),fill="#691d7f",
+    fontface = 'bold', color = 'white',
+    segment.color = '#691d7f',
+    label.size = 0.05,show.legend = FALSE,box.padding = 2,point.padding = 0.5,arrow = arrow(length = unit(0.01, 'npc'))) + theme_bw()+
+  labs(x="Event Date",y="Cumulative new members") + scale_x_date(breaks=events$date_event) +  theme(axis.text.x = element_text(angle=45,hjust = 1))
+```
+
+- Cumulative by Month
+
+```{r month_new_members_events,fig.width=13,fig.height=7}
+library(readr)
+library(tidyverse)
+library(ggrepel)
+
+members_joined <- members %>% group_by(Year,Month) %>% 
+  dplyr::summarise(New_members = length(Name)) %>% 
+  unite(Year_Month,Year,Month,sep="-",remove=FALSE)
+
+events <- data.frame(Event = c("Random Forest & Climate Change",
+                               "Introduction to R",
+                               "mixOmics",
+                               "Neural Network",
+                               "Sports Analytics",
+                               "Twitter Workshop \n GitHub",
+                               "Dashboards with R \n Women's Day breakfast \n Hidden Figures screening",
+                               "Trivia Night-Christmas Party",
+                               "RNotebook & Interactive Graphics",
+                               "Launch Meetup",
+                               "Analytics Charity Christmas Gala \n (With Data Science Meetup)"),
+                     Year_Month = c("2017-10",
+                                    "2017-9",
+                                    "2017-8",
+                                    "2017-7",
+                                    "2017-6",
+                                    "2017-5",
+                                    "2017-3",
+                                   "2016-12",
+                                   "2017-2",
+                                   "2016-10",
+                                    "2016-11"))
+
+events$Year_Month <- factor(events$Year_Month,levels=c("2016-10","2016-11","2016-12","2017-2","2017-3","2017-5","2017-6","2017-7","2017-8","2017-9","2017-10"))
+
+merge_event_members <- merge(members_joined,events,all = TRUE)
+merge_event_members$cumulative <- cumsum(merge_event_members$New_members)
+merge_event_members$Year_Month <- factor(merge_event_members$Year_Month,levels=c("2016-9","2016-10","2016-11","2016-12","2017-2","2017-3","2017-4","2017-5","2017-6","2017-7","2017-8","2017-9","2017-10"))
+
+ggplot(merge_event_members,aes(x=Year_Month,y=cumulative,group=Year_Month)) + geom_line(group = 1,linetype="dotted") + geom_point(colour="#691d7f",size=3)  +
+  geom_label_repel(aes(x=Year_Month,y=cumulative,label=Event),fill="#691d7f",
+    fontface = 'bold', color = 'white',
+    segment.color = '#691d7f',
+    label.size = 0.05,show.legend = FALSE,box.padding = 2,point.padding = 0.5,nudge_x = -1, nudge_y = 2,arrow = arrow(length = unit(0.01, 'npc'))) + theme_bw() +
+  labs(x="Month",y="Cumulative new members")
+```
+
+- Not cumulative
+
+```{r new_members_per_month,fig.width=13,fig.height=7}
+ggplot(merge_event_members,aes(x=Year_Month,y=New_members,group=Year_Month)) + geom_line(group = 1,linetype="dotted") + geom_point(colour="#691d7f",size=3)  +
+  geom_label_repel(aes(x=Year_Month,y=New_members,label=Event),fill="#691d7f",
+    fontface = 'bold', color = 'white',
+    segment.color = '#691d7f',
+    label.size = 0.05,show.legend = FALSE,box.padding = 2,point.padding = 0.5,nudge_x = -1, nudge_y = 2,arrow = arrow(length = unit(0.01, 'npc'))) + theme_bw() +
+  labs(x="Month",y="Cumulative new members")
+```
+
+

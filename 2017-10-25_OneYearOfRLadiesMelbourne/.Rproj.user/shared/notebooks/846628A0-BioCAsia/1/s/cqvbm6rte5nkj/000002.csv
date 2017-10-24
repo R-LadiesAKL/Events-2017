@@ -1,0 +1,5 @@
+"0","users <- getUser_wrapper(df$screenName)
+"
+"2","Error in getUser_wrapper(df$screenName) : 
+  could not find function ""getUser_wrapper""
+"

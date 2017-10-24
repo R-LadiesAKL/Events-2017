@@ -1,0 +1,24 @@
+"0","if(doInstall){
+    install.packages(toInstall, repos = ""http://cran.r-project.org"")
+    library(devtools)
+    # R packages to get twitter and Facebook data
+    install_github(""streamR"", ""pablobarbera"", subdir=""streamR"")
+    install_github(""Rfacebook"", ""pablobarbera"", subdir=""Rfacebook"")
+    # smapp R package
+    install_github(""smappR"", ""SMAPPNYU"")
+}
+"
+"1","Error in "
+"1","install.packages"
+"1"," : "
+"1","Updating loaded packages"
+"1","
+"
+"2","Username parameter is deprecated. Please use pablobarbera/streamR"
+"2","Downloading GitHub repo pablobarbera/streamR@master
+from URL https://api.github.com/repos/pablobarbera/streamR/zipball/master
+"
+"1","
+Restarting R session...
+
+"
