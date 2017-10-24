@@ -19,3 +19,7 @@ Events in 2016-2017
 -   [mixOmics: Combine Large Scale Datasets](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-08-22-combine-large-scale-dataset-workshop)
 
 -   [Introduction to R Workshop](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-09-23-Introduction_to_R_workshop)
+
+-   [Random Forest, Climate Change and Food Production](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-10-25-ClimateChange_and_RandomForest)
+
+-   [One Year of R-Ladies Melbourne](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-10-25_OneYearOfRLadiesMelbourne)
