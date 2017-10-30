@@ -60,4 +60,5 @@ Speaker: [Elizabeth Vogel](https://twitter.com/evbln), PhD researcher at the Aus
 
 ## [One Year of R-Ladies Melbourne](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-10-25_OneYearOfRLadiesMelbourne)
 
-Presented by [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart)
+Prepared by [Anna Quaglieri](https://github.com/annaquaglieri16) and [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart) and presented by [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart).
+
