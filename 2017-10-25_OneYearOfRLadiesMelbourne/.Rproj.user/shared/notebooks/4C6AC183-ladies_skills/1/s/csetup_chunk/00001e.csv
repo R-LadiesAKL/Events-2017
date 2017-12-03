@@ -1,5 +1,0 @@
-"0","ladies_fields <- read.csv(""./All_ladies/ladies_fields.csv"")
-"
-"2","cannot open file './All_ladies/ladies_fields.csv': No such file or directory"
-"2","Error in file(file, ""rt"") : cannot open the connection
-"

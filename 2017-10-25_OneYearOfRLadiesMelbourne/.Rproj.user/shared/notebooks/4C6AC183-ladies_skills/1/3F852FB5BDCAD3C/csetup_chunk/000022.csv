@@ -1,4 +1,0 @@
-"0","ladies_fields <- read_csv(""./All_ladies/ladies_fields.csv"")
-"
-"2","Error: './All_ladies/ladies_fields.csv' does not exist in current working directory ('/Users/quaglieri.a/Documents/varie/Rladies/BioCAsia/All_ladies').
-"

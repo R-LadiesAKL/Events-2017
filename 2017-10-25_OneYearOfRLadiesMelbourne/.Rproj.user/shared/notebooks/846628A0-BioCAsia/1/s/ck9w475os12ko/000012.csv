@@ -1,5 +1,0 @@
-"0","# convert to lower case
-myCorpus <- tm_map(myCorpus, content_transformer(tolower))
-"
-"2","Error in FUN(content(x), ...) : invalid input 'RT RLadiesGlobal Soon RLadiesAU will celebrate their st birthday í ½í¸Ž Will they have an even cooler cake than when launching í ¾í´” ' in 'utf8towcs'
-"
