@@ -1,5 +1,5 @@
 
-<img src="README_files/figure-markdown_github-ascii_identifiers/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+<img src="README_files/figure-markdown_github/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 
 Events in 2016-2017
 ===================
@@ -60,4 +60,14 @@ Speaker: [Elizabeth Vogel](https://twitter.com/evbln), PhD researcher at the Aus
 [One Year of R-Ladies Melbourne](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-10-25_OneYearOfRLadiesMelbourne)
 ----------------------------------------------------------------------------------------------------------------------------
 
-Presented by [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart)
+Prepared by [Anna Quaglieri](https://github.com/annaquaglieri16) and [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart) and presented by [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart).
+
+[Introduction to R-Shiny](https://github.com/R-LadiesAU/Events-2017/tree/master/2017-11-23-Introduction-To-RShiny)
+------------------------------------------------------------------------------------------------------------------
+
+Prepared and presented by [Soroor Zadeh](https://github.com/soroorh) and [Marie Trussart](https://www.researchgate.net/profile/Marie_Trussart).
+
+[Christmas Party]()
+-------------------
+
+Organised and directed by [Saskia Freytag](https://github.com/SaskiaFreytag)
